@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Categorias</title>
+   <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Categorias</h1>
+    <a href="/categories/new" class="btn">+ Nueva categoria</a>
+    <ul>
+        <% categories.forEach(c => { %>
+            <li>
+                <a href="/categories/<%= c.id %>"><%= c.name %></a>
+                <p><%= c.description || "" %></p>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

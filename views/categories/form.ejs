@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= category?.id ? "Editar" : "Nueva" %> categoria</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1><%= category?.id ? "Editar" : "Nueva" %> categoria</h1>
+
+    <% if (errors && errors.length > 0){ %>
+        <ul class="errors">
+            <% errors.forEach(e =>{ %><li><%= e.msg %></li><% }); %>
+        </ul>
+    <% } %>
+    <form method="POST" action="<%= category?.id ? `/categories/${category.id}/edit` : `/categories/new` %>">
+        <input 
+        type="text" 
+        name="name" 
+        value="<%= category?.name || '' %>" placeholder="Nombre" 
+        autocomplete="off"
+        spellcheck="false"
+        required />
+        <textarea 
+        name="description"  
+        placeholder="Descripcion"
+        autocomplete="off"
+        spellcheck="false"
+        ><%= category?.description || '' %></textarea>
+        <button type="submit" class="btn">Guardar</button>
+    </form>
+</body>
+</html>

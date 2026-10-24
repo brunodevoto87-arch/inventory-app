@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar categoria</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Eliminar "<%= category.name %>"</h1>
+    <p>¿Estas seguro? Se eliminaran TODOS los items de esta categoria.</p>
+    <form method="POST" action="/categories/<%= category.id %>/delete">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="/categories" class="btn">Cancelar</a>
+    </form>
+</body>
+</html>

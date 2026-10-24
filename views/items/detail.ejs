@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= item.name %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1><%= item.name %></h1>
+    <p><%= item.description || "" %></p>
+    <p><strong>Precio:</strong> $<%= item.price %></p>
+    <p><strong>Stock:</strong> <%= item.stock %></p>
+    <p><strong>Categoria:</strong> <%= item.category_name || 'Sin categoria' %></p>
+    <a href="/items/<%= item.id %>/edit" class="btn">Editar</a>
+    <a href="/items/<%= item.id %>/delete" class="btn btn-danger">Eliminar</a>
+</body>
+</html>
